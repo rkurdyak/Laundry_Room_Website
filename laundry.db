@@ -1,0 +1,19 @@
+import sqlite3
+
+def init_db():
+    conn = sqlite3.connect('laundry.db')
+    c = conn.cursor()
+    # Create table for service requests
+    c.execute('''
+        CREATE TABLE IF NOT EXISTS requests (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            machine_id TEXT NOT NULL,
+            issue TEXT NOT NULL,
+            email TEXT,
+            timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+        )
+    ''')
+    conn.commit()
+    conn.close()
+
+init_db()  # Call this once to set up the database

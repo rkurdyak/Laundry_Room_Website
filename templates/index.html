@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laundry Service Request</title>
+</head>
+<body>
+    <h1>Report a Machine Issue</h1>
+    <form action="/new_request" method="POST">
+        <label for="machine_id">Select Washer/Dryer:</label>
+        <select name="machine_id" id="machine_id">
+            <option value="Washer 1">Washer 1</option>
+            <option value="Washer 2">Washer 2</option>
+            <option value="Dryer 1">Dryer 1</option>
+            <option value="Dryer 2">Dryer 2</option>
+        </select><br>
+
+        <label for="issue">Issue Description:</label><br>
+        <textarea name="issue" id="issue" rows="4" cols="50"></textarea><br>
+
+        <label for="email">Your Email:</label>
+        <input type="email" name="email" id="email"><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
